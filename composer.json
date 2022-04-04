@@ -1,0 +1,17 @@
+{
+    "name": "julian/m7_php_database",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Julian\\M7PhpDatabase\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "technix"
+        }
+    ],
+    "require": {
+        "doctrine/dbal": "^3.3"
+    }
+}
