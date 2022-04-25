@@ -16,8 +16,7 @@ $queryBuilder
     ->select('*')
     ->from('ressource')
     ->where('Menge = ?')
-    ->setParameter(0, '55189')
-;
+    ->setParameter(0, '55189');
 
 $result = $queryBuilder->executeQuery()->fetchAssociative();
 
