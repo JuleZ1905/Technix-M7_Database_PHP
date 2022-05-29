@@ -1,50 +1,25 @@
-DROP
-DATABASE IF EXISTS Tournament;
+DROP DATABASE IF EXISTS tournament;
 
-CREATE
-DATABASE IF NOT EXISTS Tournament
-    DEFAULT CHARACTER SET utf8
-    DEFAULT COLLATE utf8_general_ci;
+CREATE DATABASE IF NOT EXISTS tournament DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
 
+USE tournament;
 
-CREATE TABLE gameround
-(
-    pk_gameraoundId INTEGER PRIMARY KEY,
-    round           VARCHAR(50) NOT NULL,
-    date            DATE,
-    time            TIME,
-
-    fk_pk_symbolID  VARCHAR     NOT NULL,
-    CONSTRAINT fk_symbol_round FOREIGN KEY (fk_pk_symbolID) REFERENCES player (pk_playerId)
-        ON DELETE CASCADE
+DROP TABLE IF EXISTS player;
+CREATE TABLE player (
+    pk_player_id INTEGER PRIMARY KEY,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL
 );
 
-
-CREATE TABLE player
-(
-    pk_playerId INTEGER PRIMARY KEY,
-    name        VARCHAR(50) NOT NULL,
-    lastname    VARCHAR(50),
-
-
-);
-
-CREATE TABLE round_player
-(
-    pk_fk_gameraoundId INTEGER  NOT NULL,
-    pk_fk_playerId      INTEGER NOT NULL,
-
-    PRIMARY KEY (pk_fk_gameraoundId, pk_fk_playerId),
-
-    CONSTRAINT fk_round_player FOREIGN KEY (pk_fk_playerId)
-        REFERENCES pilot (pk_fk_id),
-    CONSTRAINT fk_player_round FOREIGN KEY (pk_fk_playerId)
-        REFERENCES flug (pk_id)
-
-)
-
-
-CREATE TABLE symbol
-(
-    pk_symbolID VARCHAR PRIMARY KEY,
+DROP TABLE IF EXISTS gameround;
+CREATE TABLE gameround (
+    pk_round_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    `date` DATE NOT NULL,
+    `time` TIME NOT NULL,
+    fk_p1 INT NOT NULL,
+    fk_p2 INT NOT NULL,
+    symbol_p1 VARCHAR(15) NOT NULL,
+    symbol_p2 VARCHAR(15) NOT NULL,
+    CONSTRAINT fk_gameround_p1 FOREIGN KEY (fk_p1) REFERENCES player(pk_player_id),
+    CONSTRAINT fk_gameround_p2 FOREIGN KEY (fk_p2) REFERENCES player(pk_player_id)
 );
