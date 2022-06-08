@@ -1,0 +1,56 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f2f2f2;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+#header {
+  text-align: center;
+  font-size: 3em;
+  margin-top: 3%;
+}
+
+#form-sheet {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 40%;
+  height: 60%;
+  border: solid black;
+  border-radius: 20px;
+  border-width: 5px 3px 3px 5px;
+  border-radius: 95% 4% 97% 5%/4% 94% 3% 95%;
+  padding: 3%;
+}
+
+.table-form {
+  margin: 0;
+  padding: 2em;
+  height: fit-content;
+  border: solid black;
+  border-width: 3px 4px 3px 5px;
+  border-radius: 95% 4% 92% 5%/4% 95% 6% 95%;
+}
+
+.everything {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 7%;
+}
+
+.input-field {
+    margin-left: 1.5em;
+}
+
+td {
+  padding: .5em;
+}

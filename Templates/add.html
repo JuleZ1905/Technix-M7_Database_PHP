@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Game</title>
+    <link rel="stylesheet" href="CSS/add.css" />
+  </head>
+  <body>
+    <h1 id="header">Add gameround</h1>
+    <div class="everything">
+      <form action="index.html" id="form-sheet">
+        <table class="table-form">
+          <tbody>
+            <tr>
+              <td>Player 1:</td>
+              <td>
+                <input
+                  type="text"
+                  name="p1"
+                  value="Player1"
+                  class="input-field"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Player 2:</td>
+              <td>
+                <input
+                  type="text"
+                  name="p1"
+                  value="Player2"
+                  class="input-field"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Player 1 Symbol:</td>
+              <td>
+                <input type="radio" name="symbol-p1" value="rock" id="rock-p1" />
+                <label for="rock-p1">Rock</label>
+                <input type="radio" name="symbol-p1" value="paper" id="paper-p1" />
+                <label for="paper-p1">Paper</label>
+                <input type="radio" name="symbol-p1" value="scissors" id="scissors-p1" />
+                <label for="scissors-p1">Scissors</label>
+              </td>
+            </tr>
+            <tr>
+              <td>Player 2 Symbol:</td>
+              <td>
+                <input type="radio" name="symbol-p2" value="rock" id="rock-p2" />
+                <label for="rock-p2">Rock</label>
+                <input type="radio" name="symbol-p2" value="paper" id="paper-p2" />
+                <label for="paper-p2">Paper</label>
+                <input type="radio" name="symbol-p2" value="scissors" id="scissors-p2" />
+                <label for="scissors-p2">Scissors</label>
+              </td>
+            </tr>
+            <tr>
+              <td>Date of game:</td>
+              <td>
+                <input
+                  type="date"
+                  name="date"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Time of game:</td>
+              <td>
+                <input
+                  type="time"
+                  name="time"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Winner</td>
+              <td>
+                <input type="radio" name="winner" value="p1" id="winner-p1" />
+                <label for="winner-p1">Player 1</label>
+                <input type="radio" name="winner" value="p2" id="winner-p2" />
+                <label for="winner-p2">Player 2</label>
+                <input type="radio" name="winner" value="draw" id="draw" />
+                <label for="draw">Draw</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+
+              </td>
+              <td>
+                <input type="submit" value="Submit" class="submit-button" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </div>
+  </body>
+</html>

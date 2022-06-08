@@ -13,6 +13,8 @@ body {
 
 #header {
   text-align: center;
+  font-size: 3em;
+  margin-top: 3%;
 }
 
 .all-content {
@@ -20,12 +22,13 @@ body {
   height: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 10%;
+  margin-top: 7%;
 }
 
 .all-entries {
   text-align: center;
   width: 80%;
+  height: fit-content;
   border: solid black;
   border-radius: 20px;
   border-width: 5px 3px 3px 5px;
@@ -50,6 +53,11 @@ body {
   justify-content: space-between;
 }
 
+.entry-header {
+  display: flex;
+  flex-direction: row;
+}
+
 .left-opponent {
     min-width: 23%;
     min-height: 100px;
@@ -69,5 +77,11 @@ body {
   border: solid black;
   border-width: 5px 3px 3px 5px;
   border-radius:95% 4% 97% 5%/4% 94% 3% 95%;
+}
+
+.del-button {
+  border: solid black;
+  border-width: 1px 2px 1px 3px;
+  border-radius:95% 4% 92% 5%/4% 95% 6% 95%;
 }
 
