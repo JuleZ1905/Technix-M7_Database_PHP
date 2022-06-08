@@ -1,6 +1,8 @@
 <?php
 
-$html = file_get_contents('/Templates/index.html');
+use TYPO3Fluid\Fluid\View\TemplateView;
+
+require('vendor/autoload.php');
 
 /**
  * data which needs to be sent to the template
@@ -12,8 +14,11 @@ $html = file_get_contents('/Templates/index.html');
  * 6) symbols picked
  */
 
+$view = new TemplateView();
 
+$paths = $view->getTemplatePaths();
+$paths->setTemplatePathAndFilename('templates/index.html');
 
-echo $html;
+echo $view->render();
 
 ?>
