@@ -32,5 +32,11 @@ VALUES ('Julian', 'Zangl'),
        ('Corvin', 'Prath'),
        ('Bernhard', 'Myska');
 
+INSERT INTO gameround (`date`, `time`, fk_p1, fk_p2, symbol_p1, symbol_p2)
+VALUES ('2022-01-01', '11:05:00', 1, 2, 'rock', 'paper'),
+       ('2022-01-01', '12:20:00', 3, 4, 'scissors', 'rock'),
+       ('2022-01-01', '13:35:00', 2, 4, 'paper', 'scissors'),
+       ('2022-01-01', '14:20:00', 1, 3, 'paper', 'rock'),
+       ('2022-01-01', '15:40:00', 4, 1, 'rock', 'rock');
 
-
+SELECT * FROM gameround;
