@@ -25,8 +25,8 @@ $view = new TemplateView();
 $paths = $view->getTemplatePaths();
 $paths->setTemplatePathAndFilename('templates/index.html');
 
-// echo $view->render();
-header('Content-Type: application/json');
-echo json_encode($gamerounds);
+$view->assignMultiple([
+    'gamerounds' => $gamerounds
+]);
 
-?>
+echo $view->render();

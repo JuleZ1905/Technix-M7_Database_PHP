@@ -2,20 +2,22 @@
 
 namespace Julian\M7PhpDatabase;
 
-class GameRound {
+class Gameround {
     protected $player1;
     protected $player2;
     protected $winner;
     protected $date;
     protected $time;
+    protected $id;
 
-    public function __construct($player1, $player2, $winner, $date, $time)
+    public function __construct($player1, $player2, $winner, $date, $time, $id)
     {
         $this->player1 = $player1;
         $this->player2 = $player2;
         $this->winner = $winner;
         $this->date = $date;
         $this->time = $time;
+        $this->id = $id;
     }
 
     /**
@@ -56,6 +58,14 @@ class GameRound {
     public function getTime()
     {
         return $this->time;
+    }
+
+    /**
+     * Get the value of id
+     */
+    public function getId()
+    {
+        return $this->id;
     }
 }
 

@@ -10,7 +10,7 @@ class Player
     protected $playerSymbol;
 
 
-    public function __construct($firstname, $playerId, $playerSymbol, $lastname)
+    public function __construct($playerId, $firstname, $lastname, $playerSymbol)
     {
         $this->firstname = $firstname;
         $this->playerId = $playerId;
@@ -18,8 +18,20 @@ class Player
         $this->lastname = $lastname;
     }
 
+    public static function createPlayer($id, $symbol) {
+        require('db/db.php');
+        $querybuilder = $conn->createQueryBuilder();
+        $querybuilder->select('*')
+            ->from('player')
+            ->where('pk_player_id = :id')
+            ->setParameter('id', $id);
+        $statement = $querybuilder->execute();
+        $row = $statement->fetch();
+        $player = new Player($row['pk_player_id'], $row['first_name'], $row['last_name'], $symbol);
+        return $player;
+    } 
 
-    public function getPlayerName()
+    public function getFirstname()
     {
         return $this->firstname;
     }
