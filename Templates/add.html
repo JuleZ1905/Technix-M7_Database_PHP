@@ -10,92 +10,121 @@
   <body>
     <h1 id="header">Add gameround</h1>
     <div class="everything">
-      <form action="index.html" id="form-sheet">
+      <form action="add.php" id="form-sheet" method="POST">
         <table class="table-form">
           <tbody>
             <tr>
+              <td>
+                <h2>Enter data:</h2>
+              </td>
+            </tr>
+            <tr>
               <td>Player 1:</td>
               <td>
-                <input
-                  type="text"
-                  name="p1"
-                  value="Player1"
-                  class="input-field"
-                />
+                <select name="player1" required>
+                  <f:for each="{players}" as="player">
+                    <option value="{player.id}">
+                      {player.firstname} {player.lastname}
+                    </option>
+                  </f:for>
+                </select>
               </td>
             </tr>
             <tr>
               <td>Player 2:</td>
               <td>
-                <input
-                  type="text"
-                  name="p1"
-                  value="Player2"
-                  class="input-field"
-                />
+                <select name="player2" required>
+                  <f:for each="{players}" as="player">
+                    <option value="{player.id}">
+                      {player.firstname} {player.lastname}
+                    </option>
+                  </f:for>
+                </select>
               </td>
             </tr>
             <tr>
               <td>Player 1 Symbol:</td>
               <td>
-                <input type="radio" name="symbol-p1" value="rock" id="rock-p1" />
+                <input
+                  type="radio"
+                  name="symbol-p1"
+                  value="rock"
+                  id="rock-p1"
+                  checked
+                  required
+                />
                 <label for="rock-p1">Rock</label>
-                <input type="radio" name="symbol-p1" value="paper" id="paper-p1" />
+                <input
+                  type="radio"
+                  name="symbol-p1"
+                  value="paper"
+                  id="paper-p1"
+                  required
+                />
                 <label for="paper-p1">Paper</label>
-                <input type="radio" name="symbol-p1" value="scissors" id="scissors-p1" />
+                <input
+                  type="radio"
+                  name="symbol-p1"
+                  value="scissors"
+                  id="scissors-p1"
+                  required
+                />
                 <label for="scissors-p1">Scissors</label>
               </td>
             </tr>
             <tr>
               <td>Player 2 Symbol:</td>
               <td>
-                <input type="radio" name="symbol-p2" value="rock" id="rock-p2" />
+                <input
+                  type="radio"
+                  name="symbol-p2"
+                  value="rock"
+                  id="rock-p2"
+                  checked
+                  required
+                />
                 <label for="rock-p2">Rock</label>
-                <input type="radio" name="symbol-p2" value="paper" id="paper-p2" />
+                <input
+                  type="radio"
+                  name="symbol-p2"
+                  value="paper"
+                  id="paper-p2"
+                  required
+                />
                 <label for="paper-p2">Paper</label>
-                <input type="radio" name="symbol-p2" value="scissors" id="scissors-p2" />
+                <input
+                  type="radio"
+                  name="symbol-p2"
+                  value="scissors"
+                  id="scissors-p2"
+                  required
+                />
                 <label for="scissors-p2">Scissors</label>
               </td>
             </tr>
             <tr>
               <td>Date of game:</td>
               <td>
-                <input
-                  type="date"
-                  name="date"
-                />
+                <input type="date" name="date" required/>
               </td>
             </tr>
             <tr>
               <td>Time of game:</td>
               <td>
-                <input
-                  type="time"
-                  name="time"
-                />
+                <input type="time" name="time" required />
               </td>
             </tr>
             <tr>
-              <td>Winner</td>
+              <td></td>
               <td>
-                <input type="radio" name="winner" value="p1" id="winner-p1" />
-                <label for="winner-p1">Player 1</label>
-                <input type="radio" name="winner" value="p2" id="winner-p2" />
-                <label for="winner-p2">Player 2</label>
-                <input type="radio" name="winner" value="draw" id="draw" />
-                <label for="draw">Draw</label>
-              </td>
-            </tr>
-            <tr>
-              <td>
-
-              </td>
-              <td>
-                <input type="submit" value="Submit" class="submit-button" />
+                <input type="submit" value="submit" name="submit" class="submit-button" />
               </td>
             </tr>
           </tbody>
         </table>
+        <f:if condition="{error}">
+          <h2>{error}</h2>
+        </f:if>
       </form>
     </div>
   </body>

@@ -31,6 +31,28 @@ class Gameround
         $querybuilder->execute();
     }
 
+    public static function addGameround($date, $time, $player1, $player2, $symbol_p1, $symbol_p2)
+    {
+        require('db/db.php');
+        $querybuilder = $conn->createQueryBuilder();
+        $querybuilder
+            ->insert('gameround')
+            ->setValue('date', '?')
+            ->setValue('time', '?')
+            ->setValue('fk_p1', '?')
+            ->setValue('fk_p2', '?')
+            ->setValue('symbol_p1', '?')
+            ->setValue('symbol_p2', '?')
+            ->setParameter(0, $date)
+            ->setParameter(1, $time)
+            ->setParameter(2, $player1)
+            ->setParameter(3, $player2)
+            ->setParameter(4, $symbol_p1)
+            ->setParameter(5, $symbol_p2);
+
+        $querybuilder->execute();
+    }
+
     /**
      * Get the value of player1
      */

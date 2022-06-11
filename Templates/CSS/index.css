@@ -64,6 +64,8 @@ p {
 }
 
 .entry-headline {
+  display: flex;
+  justify-content: space-between;
   width: 100%;
   text-align: left;
 }
@@ -89,9 +91,19 @@ p {
   border-radius:95% 4% 97% 5%/4% 94% 3% 95%;
 }
 
-.del-button {
+.del-button, .add-button {
+  background-color: #f2f2f2;
   border: solid black;
   border-width: 1px 2px 1px 3px;
   border-radius:95% 4% 92% 5%/4% 95% 6% 95%;
+  padding: .7em;
+  font-size: 1em;
+  transition: transform .3s;
+}
+
+.del-button:hover, .add-button:hover {
+  background-color: #e6e6e6;
+  cursor: pointer;
+  transform: scale(1.08);
 }
 
