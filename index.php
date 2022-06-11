@@ -2,13 +2,12 @@
 
 use Julian\M7PhpDatabase\Tournament;
 use TYPO3Fluid\Fluid\View\TemplateView;
+use Julian\M7PhpDatabase\Gameround;
 
 require('vendor/autoload.php');
 
-$gamerounds = [];
 $tournament = new Tournament();
 $gamerounds = $tournament->getGamerounds();
-
 
 /**
  * data which needs to be sent to the template
@@ -28,5 +27,9 @@ $paths->setTemplatePathAndFilename('templates/index.html');
 $view->assignMultiple([
     'gamerounds' => $gamerounds
 ]);
+
+if (isset($_POST['action']) && $_POST['action'] == 'delete') {
+    Gameround::deleteGameround($_POST['id']);
+}
 
 echo $view->render();

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>USARPS</title>
     <link rel="stylesheet" href="/templates/CSS/index.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script defer src="/src/scripts/script.js"></script>
   </head>
   <body>
@@ -17,8 +18,11 @@
           <div class="entry">
             <div class="entry-header">
               <h2 class="entry-headline">
-                Game between {round.player1.firstname} and
-                {round.player2.firstname} <span class="date-time">{round.date} {round.time}</span>
+                <span>
+                  Game between {round.player1.firstname} and
+                  {round.player2.firstname}
+                </span>
+                <span class="date-time">{round.date} {round.time}</span>
               </h2>
             </div>
             <div class="entry-content">

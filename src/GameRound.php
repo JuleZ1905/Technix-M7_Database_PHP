@@ -2,7 +2,8 @@
 
 namespace Julian\M7PhpDatabase;
 
-class Gameround {
+class Gameround
+{
     protected $player1;
     protected $player2;
     protected $winner;
@@ -20,9 +21,19 @@ class Gameround {
         $this->id = $id;
     }
 
+    public static function deleteGameround($id)
+    {
+        require('db/db.php');
+        $querybuilder = $conn->createQueryBuilder();
+        $querybuilder->delete('gameround')
+            ->where('pk_round_id = :id')
+            ->setParameter('id', $id);
+        $querybuilder->execute();
+    }
+
     /**
      * Get the value of player1
-     */ 
+     */
     public function getPlayer1()
     {
         return $this->player1;
@@ -30,7 +41,7 @@ class Gameround {
 
     /**
      * Get the value of player2
-     */ 
+     */
     public function getPlayer2()
     {
         return $this->player2;
@@ -38,7 +49,7 @@ class Gameround {
 
     /**
      * Get the value of winner
-     */ 
+     */
     public function getWinner()
     {
         return $this->winner;
@@ -46,7 +57,7 @@ class Gameround {
 
     /**
      * Get the value of date
-     */ 
+     */
     public function getDate()
     {
         return $this->date;
@@ -54,7 +65,7 @@ class Gameround {
 
     /**
      * Get the value of time
-     */ 
+     */
     public function getTime()
     {
         return $this->time;
@@ -68,6 +79,3 @@ class Gameround {
         return $this->id;
     }
 }
-
-?>
-
